@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--   color for the app bar and other primary UI elements -->
+    <color name="colorPrimary">@color/steel_blue</color>
+    <color name="colorPrimaryDark">@color/black</color>
+    <color name="colorAccent">#0d7cb3</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="black_effective">#2a2a2a</color>
+    <color name="orange_light">#F06423</color>
+    <color name="orange_dark">#D85A1B</color>
+    <color name="blue_black_light">#516179</color>
+    <color name="blue_black_dark">#13171d</color>
+    <color name="steel_blue">#4682B4</color>
+</resources>

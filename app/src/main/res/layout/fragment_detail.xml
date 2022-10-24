@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_layout">
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vertical_guideline"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_poster"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/view_margin"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toStartOf="@+id/vertical_guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/img_like"
+            app:layout_constraintTop_toTopOf="@id/tv_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/view_margin"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/vertical_guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_release_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_margin"
+            android:textColor="@color/orange_dark"
+            app:layout_constraintEnd_toEndOf="@+id/tv_title"
+            app:layout_constraintStart_toStartOf="@+id/tv_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_votes_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_margin"
+            android:textColor="@color/orange_dark"
+            app:layout_constraintEnd_toEndOf="@+id/tv_title"
+            app:layout_constraintStart_toStartOf="@+id/tv_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_release_date" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_margin"
+            android:textColor="@color/orange_dark"
+            app:layout_constraintStart_toStartOf="@+id/tv_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_votes_count" />
+
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/rating_bar"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/view_margin"
+            android:layout_marginTop="@dimen/view_margin"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:stepSize="0.1"
+            app:layout_constraintStart_toEndOf="@+id/tv_rating"
+            app:layout_constraintTop_toBottomOf="@+id/tv_votes_count" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_like"
+            android:layout_width="@dimen/fav_icon_dimen"
+            android:layout_height="@dimen/fav_icon_dimen"
+            android:layout_marginTop="@dimen/view_margin"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="@+id/tv_title"
+            app:layout_constraintTop_toBottomOf="@+id/rating_bar" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_plot"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_layout"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_poster" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/trailers_loading"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/movie_poster_height"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_plot" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_trailer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_layout"
+            android:layout_marginBottom="@dimen/padding_layout"
+            android:nestedScrollingEnabled="false"
+            android:padding="@dimen/view_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_plot"
+            tools:listitem="@layout/item_trailer_view" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

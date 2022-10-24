@@ -1,0 +1,60 @@
+package com.kavin.moviestmdb.detail.view
+
+import com.kavin.moviestmdb.R
+import com.kavin.moviestmdb.detail.data.TrailerRemote
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+
+/**
+ * Created by Kavin on 19/8/2021.
+ */
+
+class TrailerAdapter(var mTrailerRemoteList: MutableList<TrailerRemote>) : RecyclerView.Adapter<TrailerAdapter.TrailerViewHolder>() {
+
+    private lateinit var mListener: TrailerAdapterListener
+
+    override fun getItemCount(): Int {
+        return if (mTrailerRemoteList.size > 0) mTrailerRemoteList.size else 0
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TrailerViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_trailer_view, parent, false)
+        return TrailerViewHolder(view)
+    }
+
+    fun addItems(mList: List<TrailerRemote>) {
+        mTrailerRemoteList.addAll(mList)
+        notifyDataSetChanged()
+    }
+
+    fun clearItems() {
+        mTrailerRemoteList.clear()
+    }
+
+
+    interface TrailerAdapterListener {
+        fun onTrailerClicked(trailerRemote: TrailerRemote)
+    }
+
+    inner class TrailerViewHolder internal constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var tvTrailerName: TextView = itemView.findViewById(R.id.trailer_tv) as TextView
+        var playBtn: ImageView = itemView.findViewById(R.id.play_btn) as ImageView
+
+    }
+
+    override fun onBindViewHolder(holder: TrailerViewHolder, position: Int) {
+        val trailer = mTrailerRemoteList[position]
+        holder.tvTrailerName.text = trailer.name
+        holder.playBtn.setOnClickListener { mListener.onTrailerClicked(trailer) }
+    }
+
+    fun setListener(listener: TrailerAdapterListener) {
+        mListener = listener
+    }
+
+
+}

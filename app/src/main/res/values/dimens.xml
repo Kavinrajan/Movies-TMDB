@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_layout">16dp</dimen>
+    <dimen name="view_margin">8dp</dimen>
+    <dimen name="movie_poster_height">150dp</dimen>
+    <dimen name="movie_thumb_height">250dp</dimen>
+    <dimen name="fav_icon_dimen">30dp</dimen>
+    <dimen name="progress_bar_dimen">60dp</dimen>
+    <dimen name="search_bar_height">56dp</dimen>
+</resources>

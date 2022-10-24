@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">TMDB Movies</string>
+    <string name="released_in">Released in : %s</string>
+    <string name="votes_count">Votes : %s</string>
+    <string name="some_error">Some error occurred !</string>
+    <string name="movie_disliked">Movie Removed from favourites</string>
+    <string name="movie_liked">Movie added to favourites</string>
+    <string name="fetch_movies_error">No movies found</string>
+    <string name="fetch_trailers_error">No trailers found</string>
+    <string name="button_retry">Retry</string>
+    <string name="search_placeholder">Search movies</string>
+</resources>
